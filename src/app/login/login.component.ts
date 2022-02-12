@@ -24,15 +24,11 @@ export class LoginComponent implements OnInit {
 
   newFormLogin(): FormGroup {
     return this.formBuilder.group({
-      email: ['bryanhdpm@hotmail.es', [Validators.required]],
-      // email: [null, [Validators.required]],
-      password: ['root', [Validators.required]],
-      // password: [null, [Validators.required]],
+      // email: ['bryanhdpm@hotmail.es', [Validators.required]],
+      email: [null, [Validators.required]],
+      // password: ['root', [Validators.required]],
+      password: [null, [Validators.required]],
     });
-  }
-
-  isRequired(field: AbstractControl): boolean {
-    return field.hasValidator(Validators.required);
   }
 
   onSubmit() {
@@ -58,15 +54,10 @@ export class LoginComponent implements OnInit {
   }
 
   get emailField() {
-    return this.formLogin.controls['username'];
+    return this.formLogin.controls['email'];
   }
 
   get passwordField() {
     return this.formLogin.controls['password'];
   }
-
-  get deviceNameField() {
-    return this.formLogin.controls['deviceName'];
-  }
-
 }
