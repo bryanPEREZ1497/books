@@ -1,0 +1,29 @@
+<div class="loginForm">
+  <p-card>
+    <div class="p-fluid">
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+        <div class="field text-center">
+          <h1>Create a book!</h1>
+          <!-- <img src="assets/images/components/authentication/login/logo.png" alt=""> -->
+        </div>
+
+        <div class="field">
+          <label for="email" appLabel label="Unique number">
+          </label>
+          <input pInputText id="email" formControlName="email">
+        </div>
+
+        <div class="field">
+          <label for="password" appLabel label="Password:">
+          </label>
+          <p-password id="password" formControlName="password"></p-password>
+        </div>
+
+        <div class="field">
+          <button pButton label="Log in" class="p-button-rounded" icon="pi pi-sign-in"></button>
+        </div>
+
+      </form>
+    </div>
+  </p-card>
+</div>
