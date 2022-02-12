@@ -1,0 +1,37 @@
+<div class="p-fluid">
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <span class="p-float-label">
+      <input id="title" formControlName="title" type="text" pInputText>
+      <label for="title">Book Title</label>
+    </span>
+
+    <span class="p-float-label">
+      <input id="dateEdition" formControlName="dateEdition" type="text" pInputText>
+      <label for="dateEdition">Edition Date</label>
+    </span>
+
+    <span class="p-float-label">
+      <p-inputNumber id="numberEdition" formControlName="numberEdition"></p-inputNumber>
+      <label for="numberEdition">Edition Number</label>
+    </span>
+
+    <p-dropdown id="author" formControlName="author" 
+      [options]="authors" 
+      [filter]="true" 
+      filterBy="user.name"
+      placeholder="Select">
+      <ng-template pTemplate="selectedItem">
+        <div *ngIf="authorField.value">
+          <div>{{authorField.value?.user.name}}</div>
+        </div>
+      </ng-template>
+      <ng-template let-item pTemplate="item">
+        <div>
+          <div>{{item.user.name}}</div>
+        </div>
+      </ng-template>
+    </p-dropdown>
+
+    <button pButton label="Save" icon="pi pi-save"></button>
+  </form>
+</div>
