@@ -1,8 +1,8 @@
 import { UserModel } from "./user.model";
 
 export interface LoginResponse {
-  data: Data;
-  msg?: Msg;
+  data: UserModel;
+  msg?: any;
   token?: string;
 }
 

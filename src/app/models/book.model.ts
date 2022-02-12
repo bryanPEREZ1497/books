@@ -4,8 +4,8 @@ export interface BookModel {
   id?: number;
   author?: AuthorModel;
   title?: string;
-  editionDate?: string;
-  editionNumber?: number;
+  dateEdition?: string;
+  numberEdition?: number;
   updatedAt?: Date;
   createdAt?: Date;
 }
