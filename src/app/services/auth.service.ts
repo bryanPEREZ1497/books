@@ -28,10 +28,6 @@ export class AuthService {
 
   removeLogin() {
     localStorage.removeItem('token');
-    localStorage.removeItem('auth');
-    localStorage.removeItem('roles');
-    localStorage.removeItem('role');
-    localStorage.removeItem('permissions');
-    localStorage.removeItem('keepSession');
+    localStorage.removeItem('user');
   }
 }
