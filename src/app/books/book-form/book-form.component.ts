@@ -36,14 +36,23 @@ export class BookFormComponent implements OnInit, OnDestroy {
   }
 
   storeBook(book: BookModel): void {
-    this.returnList();
-    alert(book);
-
+    this.subscriptions.push(
+      this.httpService.storeBook(book)
+        .subscribe(
+          response => {
+            this.bookForm.reset();
+            this.returnList();
+          }));
   }
 
   updateBook(book: BookModel): void {
-    this.returnList();
-    alert(book);
+    this.subscriptions.push(
+      this.httpService.updateBook(book.id!, book)
+        .subscribe(
+          response => {
+            this.bookForm.reset();
+            this.returnList();
+          }));
   }
 
   onSubmit() {
@@ -85,7 +94,7 @@ export class BookFormComponent implements OnInit, OnDestroy {
   }
 
   returnList() {
-    this.router.navigate(['/job-board/professional', 1]);
+    this.router.navigate(['/book']);
   }
 
   newForm(): FormGroup {
