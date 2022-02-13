@@ -10,7 +10,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BookFormComponent } from './books/book-form/book-form.component';
 import { BooksListComponent } from './books/books-list/books-list.component';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
+/**
+ * Prime ng 
+ */
 import { AccordionModule } from 'primeng/accordion';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -20,14 +24,16 @@ import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { PasswordModule } from 'primeng/password';
-import { TokenInterceptor } from './interceptors/token.interceptor';
+import { ToolbarModule } from 'primeng/toolbar';
+import {BadgeModule} from 'primeng/badge';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     BookFormComponent,
-    BooksListComponent
+    BooksListComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +51,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     TableModule,
     SplitButtonModule,
     PasswordModule,
+    ToolbarModule,
+    BadgeModule,
   ],
   providers: [
     {

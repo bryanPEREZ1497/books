@@ -13,6 +13,7 @@ import { HttpService } from '../../services/http.service';
 })
 export class BooksListComponent implements OnInit {
   private subscriptions: Subscription[] = [];
+  badge: number = 3;
   cols: any[] = [];
   items: MenuItem[] = [];
   books: BookModel[] = [];
