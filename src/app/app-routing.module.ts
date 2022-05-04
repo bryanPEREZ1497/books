@@ -17,10 +17,10 @@ const routes: Routes = [
     path: 'book/:id',
     component: BookFormComponent,
   },
-  {
-    path: '**',
-    redirectTo: 'login'
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'login'
+  // },
 
 ];
 

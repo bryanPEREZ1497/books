@@ -25,8 +25,13 @@ import { TableModule } from 'primeng/table';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { PasswordModule } from 'primeng/password';
 import { ToolbarModule } from 'primeng/toolbar';
-import {BadgeModule} from 'primeng/badge';
+import { BadgeModule } from 'primeng/badge';
 
+import { NgsRevealModule } from 'ngx-scrollreveal';
+
+import { SharedModule } from "./shared/shared.module";
+import { WebSiteComponent } from './web-site/web-site.component';
+import { BootstrapLessonsComponent } from './bootstrap-lessons/bootstrap-lessons.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,8 @@ import {BadgeModule} from 'primeng/badge';
     LoginComponent,
     BookFormComponent,
     BooksListComponent,
+    WebSiteComponent,
+    BootstrapLessonsComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +60,8 @@ import {BadgeModule} from 'primeng/badge';
     PasswordModule,
     ToolbarModule,
     BadgeModule,
+    SharedModule,
+    NgsRevealModule
   ],
   providers: [
     {
