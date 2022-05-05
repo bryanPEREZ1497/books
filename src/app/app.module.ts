@@ -3,14 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
-
 import { AppRoutingModule } from './app-routing.module';
+
+/**
+ * 3 party libraries
+ */
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { SharedModule } from "./shared/shared.module";
+import { NgsRevealModule } from 'ngx-scrollreveal';
+
+import { environment } from 'src/environments/environment';
+
+const config: SocketIoConfig = { url: environment.WSHOTS, options: {} };
+
+/**
+ * Components
+ */
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+// import { LoginComponent } from './login/login.component';
 import { BookFormComponent } from './books/book-form/book-form.component';
 import { BooksListComponent } from './books/books-list/books-list.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { WebSiteComponent } from './web-site/web-site.component';
+import { BootstrapLessonsComponent } from './bootstrap-lessons/bootstrap-lessons.component';
+import { LoginComponent } from './pages/login/login.component';
+
 
 /**
  * Prime ng 
@@ -26,21 +43,26 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { PasswordModule } from 'primeng/password';
 import { ToolbarModule } from 'primeng/toolbar';
 import { BadgeModule } from 'primeng/badge';
+import { FooterComponent } from './components/footer/footer.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
+import { MensajesComponent } from './pages/mensajes/mensajes.component';
 
-import { NgsRevealModule } from 'ngx-scrollreveal';
 
-import { SharedModule } from "./shared/shared.module";
-import { WebSiteComponent } from './web-site/web-site.component';
-import { BootstrapLessonsComponent } from './bootstrap-lessons/bootstrap-lessons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    // LoginComponent,
     BookFormComponent,
     BooksListComponent,
     WebSiteComponent,
     BootstrapLessonsComponent,
+    FooterComponent,
+    ChatComponent,
+    ListaUsuariosComponent,
+    MensajesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +83,8 @@ import { BootstrapLessonsComponent } from './bootstrap-lessons/bootstrap-lessons
     ToolbarModule,
     BadgeModule,
     SharedModule,
-    NgsRevealModule
+    NgsRevealModule,
+    SocketIoModule.forRoot(config),
   ],
   providers: [
     {
