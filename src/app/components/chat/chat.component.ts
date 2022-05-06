@@ -11,7 +11,7 @@ export class ChatComponent implements OnInit, OnDestroy {
 
   texto = '';
   mensajesSubscription!: Subscription;
-  // elemento: HTMLElement = document.getElementById('chat-mensajes');
+  // elemento: HTMLElement;
 
   mensajes: any[] = [];
 
@@ -20,6 +20,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   constructor(
     public chatService: ChatService
   ) {
+    // this.elemento = document.getElementById('chat-mensajes')!;
 
   }
 
@@ -29,11 +30,11 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.mensajesSubscription = this.chatService.getMessages().subscribe(msg => {
 
       this.mensajes.push(msg);
-      // console.log(msg);
+      console.log(msg);
 
-          // setTimeout(() => {
-          //   this.elemento.scrollTop = this.elemento.scrollHeight;
-          // }, 50);
+      // setTimeout(() => {
+      //   this.elemento.scrollTop = this.elemento.scrollHeight;
+      // }, 50);
 
     });
 

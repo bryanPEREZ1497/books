@@ -33,6 +33,7 @@ export class ChatService {
   }
 
   getUsuariosActivos(): Observable<any> {
+    // console.log('imlistning');
     return this.wsService.listen('usuarios-activos');
 
   }
