@@ -9,16 +9,19 @@ import { WebsocketService } from './services/websocket.service';
 })
 export class AppComponent implements OnInit {
 
+  
   constructor(private chatService: ChatService) {
 
   }
 
   ngOnInit(): void {
     // this.chatService.sendMessage('holaaa');
-    this.chatService.getMessagesPrivate().subscribe(msg => {
-      console.log(msg);
-    });
+    // this.chatService.getMessagesPrivate().subscribe(msg => {
+      // console.log(msg);
+    // });
   }
+
+  
 
 
 }

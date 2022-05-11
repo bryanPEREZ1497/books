@@ -1,17 +1,46 @@
 <h1>Usuarios</h1>
 <hr>
-<button class="btn btn-danger mb-3" (click)="salir()">Salir</button>
+<!-- <button class="btn btn-danger mb-3" (click)="salir()">Salir</button> -->
 <ul class="list-group">
-  <li class="list-group-item"
-    *ngFor="let usuario of usuariosActivosObs | async">
+  <small>
+    Hay {{(usuariosActivosObs | async)?.length}} usuarios
+  </small>
+  <li class="list-group-item" *ngFor="let usuario of (usuariosActivosObs | async)">
     {{ usuario.nombre }}
-    <span class="badge bg-primary">
+    <br>
+
+    <div [ngSwitch]="usuario.yaVoto">
+      <div *ngSwitchCase="true">
+        <div *ngIf="usuario.voto; else votoNo">
+          Votó <span class="badge bg-primary text-white">
+            YES
+          </span>
+
+        </div>
+        <ng-template #votoNo>
+          Votó <span class="badge bg-danger">
+            No
+          </span>
+        </ng-template>
+      </div>
+      <div *ngSwitchCase="false">
+        <span class="badge bg-info">
+          No votó
+        </span>
+      </div>
+      <div *ngSwitchDefault>
+        <span class="badge bg-info">
+          No votó
+        </span>
+      </div>
+    </div>
+    <!-- <span class="badge bg-primary">
       {{ usuario.sala }}
     </span>
     <br>
     <span class="badge bg-info">
       {{ usuario.id }}
-    </span>
+    </span> -->
   </li>
-</ul>
 
+</ul>

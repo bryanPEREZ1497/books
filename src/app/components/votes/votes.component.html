@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+    <div class="col-9">
+        <form class="p-4" (ngSubmit)="createQuestion()">
+            <input  id="title" 
+                    type="text" 
+                    [(ngModel)]="title"
+                    name="title" 
+                    placeholder="Pregunta" 
+                    class="form-control mb-3" 
+                    autofocus>
+            <div class="d-grid">
+                <button class="btn btn-primary">
+                    Crear pregunta
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

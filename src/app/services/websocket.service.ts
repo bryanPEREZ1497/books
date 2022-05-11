@@ -31,7 +31,7 @@ export class WebsocketService {
   }
 
   emit(event: string, payload?: any, callback?: Function) {
-    console.log('emitiendo');
+    // console.log('emitiendo');
     this.socket.emit(event, payload, callback);
   }
 

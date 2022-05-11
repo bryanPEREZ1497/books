@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { SharedModule } from "./shared/shared.module";
 import { NgsRevealModule } from 'ngx-scrollreveal';
+import { NgChartsModule } from 'ng2-charts';
 
 import { environment } from 'src/environments/environment';
 
@@ -47,6 +48,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
 import { MensajesComponent } from './pages/mensajes/mensajes.component';
+import { GraficaComponent } from './components/grafica/grafica.component';
+import { VotesComponent } from './components/votes/votes.component';
+import { QuestionsComponent } from './pages/questions/questions.component';
 
 
 
@@ -62,7 +66,10 @@ import { MensajesComponent } from './pages/mensajes/mensajes.component';
     ChatComponent,
     ListaUsuariosComponent,
     MensajesComponent,
-    LoginComponent
+    LoginComponent,
+    GraficaComponent,
+    VotesComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +92,7 @@ import { MensajesComponent } from './pages/mensajes/mensajes.component';
     SharedModule,
     NgsRevealModule,
     SocketIoModule.forRoot(config),
+    NgChartsModule,
   ],
   providers: [
     {

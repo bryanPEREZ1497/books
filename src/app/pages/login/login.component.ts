@@ -13,18 +13,15 @@ export class LoginComponent implements OnInit {
 
   constructor(private wsService: WebsocketService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
   }
 
   ingresar() {
-    console.log(this.nombre);
-    this.wsService.loginWS( this.nombre )
-      .then( () => {
-
-        this.router.navigateByUrl('/mensaje');
-
+    this.wsService.loginWS(this.nombre)
+      .then(() => {
+        this.router.navigateByUrl('/votes');
       });
   }
 
