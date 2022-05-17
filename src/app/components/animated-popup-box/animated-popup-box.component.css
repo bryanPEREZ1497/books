@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a242a;
+}
+
+.popupContainer {
+    position: relative;
+    width: 0px;
+    height: 0px;
+    background: #37444b;
+    border-radius: 25px;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupContainer .active {
+    width: 400px;
+    height: 400px;
+}
+
+.popupContainer::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background: #37444b;
+    bottom: -20px;
+    transform: rotate(45deg);
+}
+
+.toggleBtn {
+    position: absolute;
+    min-width: 60px;
+    height: 60px;
+    background-color: #0bcf9c;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggleBtn::before {
+    content: '+';
+    font-size: 2.5rem;
+    color: white;
+}

@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "..\\..\\nodejs\\socket-server"
+		},
+		{
+			"path": "."
 		}
 	],
 	"settings": {

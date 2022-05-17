@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500&display=swap');
+
+.contenedor {
+    background-color: #23272c;
+    color: #e5e1dc;
+    padding: 25px 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+ul {
+    list-style: none;
+
+    display: flex;
+    /* gap: 0 15px; */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ul li a {
+    font-size: small;
+    display: block;
+
+    color: white;
+    /* text-align: center; */
+    /* padding: 14px 16px; */
+    text-decoration: none;
+}
+
+
+.boton {
+    color: #feb642;
+    /* align-self: flex-end; */
+    /* float: right; */
+}
+
+.boton::before {
+    content: 'Hire me';
+    border-radius: 25px;
+    border: #feb642 solid;
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+
+}
+
+.brand {
+    cursor: pointer;
+
+}
+
+header {
+    margin: 4rem 0;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.card-contenedor {
+    gap: 0 1.2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 30%;
+    background: #363e45;
+    padding: 0.9rem 0.9rem;
+    border-radius: 10px;
+    /* display: block; */
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.card h3 {
+    color: #feb642;
+    text-align: center;
+    font-size: large;
+}
+
+.card span {
+    color: #e5e1dc;
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+
+
+}
+
+img {
+    margin-bottom: 1.2rem;
+}
+
+a {
+    color: #feb642;
+    text-decoration-color: #feb642;
+}
+
+.hand {
+    color: #feb642;
+    margin-left: 0.5rem;
+}

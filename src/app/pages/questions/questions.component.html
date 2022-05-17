@@ -1,25 +1,25 @@
-<div class="container d-flex flex-column align-items-center my-3">
-    <h1>{{question.title}}</h1>
-    <hr style="width: 100%;">
-    <div class="flex-row">
-        <button class="btn btn-outline-primary btn-lg mx-3" (click)="votes('yes')">
-            Yes: <span class="fw-bold">{{question.yesNumber}}</span>
-        </button>
+<h1>Usuario <small>{{wsService.usuario!.nombre}}</small></h1>
+<hr>
+<div class="row">
+    <div class="col-6">
+        <h1>{{question.title}}</h1>
+        <hr style="width: 100%;">
+        <div class="flex-row">
+            <button class="btn btn-outline-primary btn-lg mx-3" (click)="votes('yes')">
+                Yes: <span class="fw-bold">{{question.yesNumber}}</span>
+            </button>
 
-        <button class="btn btn-outline-danger btn-lg mx-3" (click)="votes('no')">
-            No: <span class="fw-bold">{{question.nosNumber}}</span>
-        </button>
+            <button class="btn btn-outline-danger btn-lg mx-3" (click)="votes('no')">
+                No: <span class="fw-bold">{{question.nosNumber}}</span>
+            </button>
+        </div>
+
+    </div>
+    <div class="col-6">
+        <app-lista-usuarios></app-lista-usuarios>
+
     </div>
 
-    <!-- <div class="d-grid gap-2"> -->
-
-    <!-- </div> -->
-    <br>
-
-    <app-lista-usuarios></app-lista-usuarios>
-
-    <br>
-    <button class="btn btn-danger my-3" style="width: 100%" (click)="salir()">
-        Salir
-    </button>
 </div>
+
+<app-grafica></app-grafica>

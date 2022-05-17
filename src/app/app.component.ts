@@ -10,7 +10,7 @@ import { WebsocketService } from './services/websocket.service';
 export class AppComponent implements OnInit {
 
   
-  constructor(private chatService: ChatService) {
+  constructor() {
 
   }
 

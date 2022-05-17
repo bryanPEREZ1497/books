@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ChartConfiguration, ChartType } from 'chart.js';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'app-grafica',
@@ -8,51 +10,58 @@ import { ChartConfiguration, ChartType } from 'chart.js';
 })
 export class GraficaComponent implements OnInit {
 
-  public lineChartData: ChartConfiguration['data'] = {
+  label = 'Answers';
+  labels = ['No', 'Yes'];
+
+  public barChartData: ChartConfiguration['data'] = {
     datasets: [
       {
-        data: [ 0,0,0,0],
-        label: 'Ventas',
-        backgroundColor: 'rgba(148,159,177,0.2)',
-        borderColor: 'rgba(148,159,177,1)',
-        pointBackgroundColor: 'rgba(148,159,177,1)',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
-        fill: 'origin',
-      },
-      // {
-      //   data: [ 28, 48, 40, 19, 86, 27, 90 ],
-      //   label: 'Series B',
-      //   backgroundColor: 'rgba(77,83,96,0.2)',
-      //   borderColor: 'rgba(77,83,96,1)',
-      //   pointBackgroundColor: 'rgba(77,83,96,1)',
-      //   pointBorderColor: '#fff',
-      //   pointHoverBackgroundColor: '#fff',
-      //   pointHoverBorderColor: 'rgba(77,83,96,1)',
-      //   fill: 'origin',
-      // },
-      // {
-      //   data: [ 180, 480, 770, 90, 1000, 270, 400 ],
-      //   label: 'Series C',
-      //   yAxisID: 'y-axis-1',
-      //   backgroundColor: 'rgba(255,0,0,0.3)',
-      //   borderColor: 'red',
-      //   pointBackgroundColor: 'rgba(148,159,177,1)',
-      //   pointBorderColor: '#fff',
-      //   pointHoverBackgroundColor: '#fff',
-      //   pointHoverBorderColor: 'rgba(148,159,177,0.8)',
-      //   fill: 'origin',
-      // }
+        data: [10, 0],
+        label: this.label,
+        // backgroundColor: 'rgba(148,159,177,0.2)',
+        // borderColor: 'rgba(148,159,177,1)',
+        // pointBackgroundColor: 'rgba(148,159,177,1)',
+        // pointBorderColor: '#fff',
+        // pointHoverBackgroundColor: '#fff',
+        // pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+        // fill: 'origin',
+      }
     ],
-    labels: [ 'January', 'February', 'March', 'April' ]
+    labels: ['No', 'Yes']
   };
 
-  public lineChartType: ChartType = 'line';
+  public barChartType: ChartType = 'bar';
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+    public wsService: WebsocketService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.http.get('http://localhost:5000/grafica')
+      .subscribe((data: any) => {
+        console.log(data);
+        this.barChartData = {
+          datasets: [{ data, label: this.label }],
+          labels: this.labels
+        }
+      });
+
+    this.escucharSocket();
+  }
+
+  escucharSocket() {
+
+    this.wsService.listen('cambio-grafica')
+      .subscribe((data: any) => {
+        console.log(data);
+
+        this.barChartData = {
+          datasets: [{ data, label: this.label }],
+          labels: this.labels
+        }
+      });
+
   }
 
 }

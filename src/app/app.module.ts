@@ -25,9 +25,22 @@ import { AppComponent } from './app.component';
 import { BookFormComponent } from './books/book-form/book-form.component';
 import { BooksListComponent } from './books/books-list/books-list.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import { WebSiteComponent } from './web-site/web-site.component';
-import { BootstrapLessonsComponent } from './bootstrap-lessons/bootstrap-lessons.component';
+// import { WebSiteComponent } from './web-site/web-site.component';
+import { WebSiteComponent } from "./components/web-site/web-site.component";
+// import { BootstrapLessonsComponent } from './bootstrap-lessons/bootstrap-lessons.component';
+import { BootstrapLessonsComponent } from "./components/bootstrap-lessons/bootstrap-lessons.component";
 import { LoginComponent } from './pages/login/login.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
+import { MensajesComponent } from './pages/mensajes/mensajes.component';
+import { GraficaComponent } from './components/grafica/grafica.component';
+import { VotesComponent } from './components/votes/votes.component';
+import { QuestionsComponent } from './pages/questions/questions.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { AnimatedPopupBoxComponent } from './components/animated-popup-box/animated-popup-box.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+
 
 
 /**
@@ -44,13 +57,6 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { PasswordModule } from 'primeng/password';
 import { ToolbarModule } from 'primeng/toolbar';
 import { BadgeModule } from 'primeng/badge';
-import { FooterComponent } from './components/footer/footer.component';
-import { ChatComponent } from './components/chat/chat.component';
-import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
-import { MensajesComponent } from './pages/mensajes/mensajes.component';
-import { GraficaComponent } from './components/grafica/grafica.component';
-import { VotesComponent } from './components/votes/votes.component';
-import { QuestionsComponent } from './pages/questions/questions.component';
 
 
 
@@ -69,7 +75,10 @@ import { QuestionsComponent } from './pages/questions/questions.component';
     LoginComponent,
     GraficaComponent,
     VotesComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    WelcomeComponent,
+    AnimatedPopupBoxComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
