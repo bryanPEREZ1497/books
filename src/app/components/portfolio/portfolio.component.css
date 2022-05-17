@@ -3,9 +3,9 @@
 .contenedor {
     background-color: #23272c;
     color: #e5e1dc;
-    padding: 25px 0;
+    padding: 25px;
     font-family: 'Poppins', sans-serif;
-
+    width: 100%;
 }
 
 ul {
@@ -14,25 +14,37 @@ ul {
     display: flex;
     /* gap: 0 15px; */
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 ul li a {
     font-size: small;
-    display: block;
 
     color: white;
-    /* text-align: center; */
-    /* padding: 14px 16px; */
     text-decoration: none;
 }
 
+.li-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap ;
+
+}
+
+.li-list li {
+    padding: 0 15px;
+    color: #e5e1dc;
+}
+
+.li-list li:hover {
+    font-weight: bold;
+}
 
 .boton {
     color: #feb642;
-    /* align-self: flex-end; */
-    /* float: right; */
 }
 
 .boton::before {
@@ -41,6 +53,9 @@ ul li a {
     border: #feb642 solid;
     padding: 0.7rem 1.2rem;
     cursor: pointer;
+    display: inline-block;
+    text-align: center;
+
 
 }
 
@@ -57,13 +72,16 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 
 .card-contenedor {
-    gap: 0 1.2rem;
-
+    /* position: relative; */
+    
+    
     display: flex;
+    gap: 1.2rem;
     justify-content: center;
     align-items: center;
     flex-direction: row;
@@ -71,23 +89,31 @@ header {
 }
 
 .card {
-    width: 30%;
+    /* width: 25%; */
     background: #363e45;
-    padding: 0.9rem 0.9rem;
     border-radius: 10px;
-    /* display: block; */
+    padding: 20px;
     cursor: pointer;
+    /* position: absolute; */
+
 
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 40px;
+
+
 }
 
 .card h3 {
     color: #feb642;
     text-align: center;
-    font-size: large;
+    font-size: 1.5em;
+    font-weight: bold;
+
 }
 
 .card span {
@@ -95,12 +121,13 @@ header {
     text-align: center;
     font-size: small;
     font-weight: bold;
-
-
 }
 
 img {
     margin-bottom: 1.2rem;
+    border-radius: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -111,4 +138,21 @@ a {
 .hand {
     color: #feb642;
     margin-left: 0.5rem;
+}
+
+/* .icon-contenedor li {
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: #e5e1dc;
+
+} */
+
+.icon-contenedor i {
+    background: #e5e1dc;
+    color: #23272c;
+    border-radius: 100%;
+    padding: 20px;
+
 }
