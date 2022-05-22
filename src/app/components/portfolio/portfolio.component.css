@@ -5,7 +5,7 @@
     color: #e5e1dc;
     padding: 20px;
     font-family: 'Poppins', sans-serif;
-    width: 100%;
+    /* width: 100%; */
 }
 
 ul {
@@ -32,6 +32,10 @@ ul li a {
     align-items: center;
     flex-wrap: wrap;
 
+}
+
+.li-list-burger {
+    display: none;
 }
 
 .li-list li {
@@ -66,7 +70,7 @@ ul li a {
 
 }
 
-header {
+.hero {
     margin: 4rem 0;
 
 
@@ -125,7 +129,7 @@ header {
     font-weight: bold;
 }
 
-img {
+.hero img {
     margin-bottom: 1.2rem;
     border-radius: 100%;
     max-width: 100%;
@@ -142,21 +146,166 @@ a {
     margin-left: 0.5rem;
 }
 
-/* .icon-contenedor li {
-    padding: 0px;
+/* .icon-contenedor li { */
+/* padding: 0px;
     width: 30px;
     height: 30px;
     border-radius: 100%;
-    background: #e5e1dc;
+    background: #e5e1dc; */
 
-} */
+/* } */
 
 .icon-contenedor i {
     background: #e5e1dc;
     color: #23272c;
     border-radius: 100%;
-    padding: 15px;
+    padding: 15px 20px;
     font-size: 1.7em;
     /*1em equal to original size, 1.5 is equal more less original size más the middle*/
+
+}
+
+/*Portfolio*/
+
+#portfolio {
+    text-align: center;
+}
+
+.portfolio-container {
+    /* background: rgb(54, 62, 69); */
+    /* padding: 3em 3em; */
+    /* margin: 3em ;  */
+    /* Es necesario el valor auto para el margen de los laterales cuando se trabaja con imagenes. de no ser puesto, gap deja de funcionar. */
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(100px, 30%)); */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 30%));
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-container__image {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+.portfolio-container__item {
+    background: #363e45;
+    padding: 10px 0;
+}
+
+/*skills*/
+#skills {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+
+    height: auto;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: row;
+    /* grid-template-columns: repeat(auto-fit, minmax(50%, 30%)); */
+    /* grid-template-columns: auto auto auto ; */
+    gap: 10px;
+
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+    height: auto;
+    width: 500px;
+
+
+}
+
+.skills__item {
+    text-align: center;
+    /* margin: 10px 0; */
+    padding: 30px;
+    background: #363e45;
+}
+
+.skills__item p {
+    padding-top: 5px;
+}
+
+.skills__item img {
+    width: 40px;
+    /* height: ; */
+    /* width: 100%;
+    height: 100%; */
+}
+
+.soft-skills-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.soft-skills-list__item {
+    background: #363e45;
+    padding: 20px;
+}
+
+.soft-skills-list__item i {
+    background: #e5e1dc;
+    color: #23272c;
+    border-radius: 100%;
+    padding: 1px 5px;
+    font-size: 1.7em;
+}
+
+.soft-skills-list__item span {
+    color: #feb642;
+}
+
+@media screen and (max-width:494px) {
+    .skills-container {
+        width: 400px;
+    }
+
+}
+
+@media screen and (max-width:395px) {
+    .skills-container {
+        width: 300px;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width:344px) {
+    .skills-container {
+        width: 100px;
+        flex-direction: column;
+
+    }
+
+}
+
+@media screen and (max-width:612px) {
+    .li-list {
+        display: none;
+
+    }
+
+    .li-list-burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
 }
