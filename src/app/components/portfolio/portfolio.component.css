@@ -186,13 +186,13 @@ a {
 }
 
 .portfolio-container__image {
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     /* object-fit: cover; */
 }
 
 .portfolio-container__item {
-    background: #363e45;
+    /* background: #363e45; */
     padding: 10px 0;
 }
 
@@ -200,9 +200,11 @@ a {
 #skills {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 35px;
     flex-wrap: wrap;
 
+    text-align: center;
     height: auto;
 }
 
@@ -227,9 +229,11 @@ a {
 
 .skills__item {
     text-align: center;
-    /* margin: 10px 0; */
     padding: 30px;
     background: #363e45;
+    min-width: 155px;
+    min-height: 145px;
+    max-height: 147px;
 }
 
 .skills__item p {
@@ -238,9 +242,6 @@ a {
 
 .skills__item img {
     width: 40px;
-    /* height: ; */
-    /* width: 100%;
-    height: 100%; */
 }
 
 .soft-skills-list {
@@ -255,8 +256,10 @@ a {
 }
 
 .soft-skills-list__item {
-    background: #363e45;
     padding: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    min-width: -webkit-fill-available;
 }
 
 .soft-skills-list__item i {
@@ -269,6 +272,73 @@ a {
 
 .soft-skills-list__item span {
     color: #feb642;
+}
+
+.soft-skills-list__item small {
+    float: right;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    
+    padding-top: 5em;
+
+
+}
+
+#email-icon {
+    width: 3em;
+}
+
+.footer__header {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    gap: 10px;
+
+
+}
+
+.form__item {
+    padding: 10px;
+    background: #363e45;
+    border: 1px solid #e5e1dc;
+    border-radius: 4px;
+    color: #e5e1dc;
+    width: 100%;
+}
+
+.form__item:focus {
+}
+
+.send {
+    border-radius: 25px;
+    color: #feb642;
+    border: #feb642 solid;
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    background: #23272c;
+}
+.send:hover {
+    color:#e5e1dc;
+    background-color: #feb642;
 }
 
 @media screen and (max-width:494px) {
