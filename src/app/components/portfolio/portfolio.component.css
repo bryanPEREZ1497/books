@@ -95,7 +95,8 @@ ul li a {
 }
 
 .card {
-    /* width: 25%; */
+    /* width: 100%; */
+    /* min-width: 155px; */
     background: #363e45;
     border-radius: 10px;
     padding: 20px;
@@ -168,32 +169,99 @@ a {
 /*Portfolio*/
 
 #portfolio {
-    text-align: center;
+    /* text-align: center; */
 }
 
 .portfolio-container {
-    /* background: rgb(54, 62, 69); */
-    /* padding: 3em 3em; */
-    /* margin: 3em ;  */
-    /* Es necesario el valor auto para el margen de los laterales cuando se trabaja con imagenes. de no ser puesto, gap deja de funcionar. */
-    display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(100px, 30%)); */
-    grid-template-columns: repeat(auto-fit, minmax(100px, 30%));
+    display: flex;
+    flex-direction: row;
     gap: 10px;
-    justify-items: center;
+
+
     align-items: center;
     justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+    /* width: auto; */
+    max-width: 100%;
+    height: auto;
 }
 
-.portfolio-container__image {
-    /* width: 100%; */
-    /* height: 100%; */
-    /* object-fit: cover; */
-}
 
 .portfolio-container__item {
-    /* background: #363e45; */
-    padding: 10px 0;
+    text-align: center;
+    padding: 30px;
+    background: #363e45;
+    /* min-width: 155px; */
+    /* min-height: auto; */
+
+    /* max-width: 30%; */
+    flex: 30%;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.portfolio-container__item:hover {
+    color: black;
+    background: #fdb64299;
+}
+
+
+.portfolio-container__image {
+    width: 40px;
+    height: auto;
+    margin: 10px;
+}
+
+.portfolio-container__image.end {
+    text-align: end;
+} 
+
+.title {
+    font-weight:600;
+    font-size: 16px;
+}
+
+.description {
+    text-align: left;
+}
+
+
+.company {
+    text-align: left;
+}
+
+.gitHubButton {
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+}
+
+/*Modal*/
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    /* background-color: rgb(0, 0, 0); */
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
 }
 
 /*skills*/
@@ -208,11 +276,10 @@ a {
     height: auto;
 }
 
+
 .skills-container {
     display: flex;
     flex-direction: row;
-    /* grid-template-columns: repeat(auto-fit, minmax(50%, 30%)); */
-    /* grid-template-columns: auto auto auto ; */
     gap: 10px;
 
 
@@ -234,6 +301,13 @@ a {
     min-width: 155px;
     min-height: 145px;
     max-height: 147px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.skills__item:hover {
+    opacity: 0.7;
+
 }
 
 .skills__item p {
@@ -286,7 +360,7 @@ a {
     align-items: center;
     text-align: center;
     gap: 50px;
-    
+
     padding-top: 5em;
 
 
@@ -321,8 +395,7 @@ form {
     width: 100%;
 }
 
-.form__item:focus {
-}
+.form__item:focus {}
 
 .send {
     border-radius: 25px;
@@ -336,9 +409,10 @@ form {
     font-weight: bold;
     background: #23272c;
 }
+
 .send:hover {
-    color:#e5e1dc;
-    background-color: #feb642;
+    color: #e5e1dc;
+    background-color: rgba(254, 182, 66, 0.379);
 }
 
 @media screen and (max-width:494px) {
