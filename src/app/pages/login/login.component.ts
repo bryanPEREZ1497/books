@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   ingresar() {
     this.wsService.loginWS(this.nombre)
       .then(() => {
-        this.router.navigateByUrl('/votes');
+        this.router.navigateByUrl('/mensaje');
       });
   }
 

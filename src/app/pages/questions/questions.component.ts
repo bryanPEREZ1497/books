@@ -31,16 +31,15 @@ export class QuestionsComponent implements OnInit {
    * Emit 
    */
   votes(answer: string = '') {
-    this.voteService.votes(answer);
-
     if (answer !== '') {
-
       this.http.post(`${environment.WSHOTS}/grafica`, {
         opcion: answer === 'yes' ? 1 : 0,
-        unidades: 1
+        unidades: 1,
+        login: this.wsService.usuario
       })
-        .subscribe((res) => console.log(res));
+      .subscribe((res) => console.log(res));
     }
+    this.voteService.votes(answer);
   }
 
   /**

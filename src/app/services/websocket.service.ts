@@ -42,16 +42,11 @@ export class WebsocketService {
   loginWS(nombre: string) {
 
     return new Promise<void>((resolve, reject) => {
-
       this.emit('configurar-usuario', { nombre }, (resp: any) => {
-
         this.usuario = new Usuario(nombre);
         this.guardarStorage();
-
         resolve();
-
       });
-
     });
 
   }

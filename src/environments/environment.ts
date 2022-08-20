@@ -1,9 +1,11 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-const HOST = 'https://real-time-app-backend.herokuapp.com';
-const WSHOTS = 'https://real-time-app-backend.herokuapp.com';
+// const HOST = 'https://real-time-app-backend.herokuapp.com';
+// const WSHOTS = 'https://real-time-app-backend.herokuapp.com';
 
+const HOST = 'http://localhost:5000';
+const WSHOTS = 'http://localhost:5000';
 export const environment = {
   production: false,
   HOST,

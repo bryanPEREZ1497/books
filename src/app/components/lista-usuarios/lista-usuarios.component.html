@@ -1,9 +1,7 @@
-<h1>Users</h1>
-<hr>
-<!-- <button class="btn btn-danger mb-3" (click)="salir()">Salir</button> -->
+<h3>Users</h3>
 <ul class="list-group">
   <small>
-    Hay {{(usuariosActivosObs | async)?.length}} usuarios
+     {{(usuariosActivosObs | async)?.length}} active users
   </small>
   <li class="list-group-item" *ngFor="let usuario of (usuariosActivosObs | async)">
     {{ usuario.nombre }}
@@ -12,35 +10,28 @@
     <div [ngSwitch]="usuario.yaVoto">
       <div *ngSwitchCase="true">
         <div *ngIf="usuario.voto; else votoNo">
-          Votó <span class="badge bg-primary text-white">
+          Voted <span class="badge bg-primary text-white">
             YES
           </span>
 
         </div>
         <ng-template #votoNo>
-          Votó <span class="badge bg-danger">
+          Voted <span class="badge bg-danger">
             No
           </span>
         </ng-template>
       </div>
       <div *ngSwitchCase="false">
         <span class="badge bg-info">
-          No votó
+          Didn't vote
         </span>
       </div>
       <div *ngSwitchDefault>
         <span class="badge bg-info">
-          No votó
+          Didn't vote
         </span>
       </div>
     </div>
-    <!-- <span class="badge bg-primary">
-      {{ usuario.sala }}
-    </span>
-    <br>
-    <span class="badge bg-info">
-      {{ usuario.id }}
-    </span> -->
   </li>
 
 </ul>

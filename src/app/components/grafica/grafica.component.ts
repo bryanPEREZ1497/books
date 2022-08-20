@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ChartConfiguration, ChartType } from 'chart.js';
 import { WebsocketService } from 'src/app/services/websocket.service';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-grafica',
   templateUrl: './grafica.component.html',
@@ -16,9 +16,9 @@ export class GraficaComponent implements OnInit {
   public barChartData: ChartConfiguration['data'] = {
     datasets: [
       {
-        data: [10, 0],
+        data: [0, 0],
         label: this.label,
-        // backgroundColor: 'rgba(148,159,177,0.2)',
+        backgroundColor: 'rgba(148,159,177,0.2)',
         // borderColor: 'rgba(148,159,177,1)',
         // pointBackgroundColor: 'rgba(148,159,177,1)',
         // pointBorderColor: '#fff',
@@ -29,6 +29,16 @@ export class GraficaComponent implements OnInit {
     ],
     labels: ['No', 'Yes']
   };
+  public barChartOptions: ChartConfiguration['options'] = {
+    responsive: true,
+    // We use these empty structures as placeholders for dynamic theming.
+    scales: {
+      x: {},
+      y: {
+        // min: 0,
+      }
+    },
+  };
 
   public barChartType: ChartType = 'bar';
 
@@ -38,9 +48,8 @@ export class GraficaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:5000/grafica')
+    this.http.get(environment.WSHOTS + '/grafica')
       .subscribe((data: any) => {
-        console.log(data);
         this.barChartData = {
           datasets: [{ data, label: this.label }],
           labels: this.labels
@@ -54,8 +63,6 @@ export class GraficaComponent implements OnInit {
 
     this.wsService.listen('cambio-grafica')
       .subscribe((data: any) => {
-        console.log(data);
-
         this.barChartData = {
           datasets: [{ data, label: this.label }],
           labels: this.labels

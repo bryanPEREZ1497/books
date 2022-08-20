@@ -19,10 +19,11 @@ export class VotesComponent {
 
   createQuestion() {
     // if (this.title === '') {
+    //   this.router.navigateByUrl('questions');
     //   return;
     // }
-    console.log('title',this.title);
-    this.voteService.nameQuestion(this.title==='' ? undefined : this.title)
+    this.voteService
+      .nameQuestion(this.title === '' ? undefined : this.title)
       .then(() => {
         this.router.navigateByUrl('questions');
       })

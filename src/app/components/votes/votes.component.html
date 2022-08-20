@@ -1,16 +1,17 @@
 <div class="row justify-content-center">
-    <div class="col-9">
+    <div class="col-6">
         <form class="p-4" (ngSubmit)="createQuestion()">
-            <input  id="title" 
+            <textarea  id="title" 
                     type="text" 
                     [(ngModel)]="title"
                     name="title" 
-                    placeholder="Pregunta" 
+                    placeholder="Question" 
                     class="form-control mb-3" 
                     autofocus>
+            </textarea>
             <div class="d-grid">
                 <button class="btn btn-primary">
-                    Crear pregunta
+                    Vote
                 </button>
             </div>
         </form>

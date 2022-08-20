@@ -21,13 +21,9 @@ export class VoteService {
   nameQuestion(title?: string) {
 
     return new Promise<void>((resolve, reject) => {
-
-
       this.websocketService.emit('questions', { title }, (res: any) => {
         resolve();
       });
-
-
     });
 
   }
