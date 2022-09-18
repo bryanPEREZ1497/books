@@ -3,11 +3,11 @@
   <small>
      {{(usuariosActivosObs | async)?.length}} active users
   </small>
-  <li class="list-group-item" *ngFor="let usuario of (usuariosActivosObs | async)">
+  <li class="list-group-item bg-dark text-white border border-light" *ngFor="let usuario of (usuariosActivosObs | async)">
     {{ usuario.nombre }}
     <br>
 
-    <div [ngSwitch]="usuario.yaVoto">
+    <!-- <div [ngSwitch]="usuario.yaVoto">
       <div *ngSwitchCase="true">
         <div *ngIf="usuario.voto; else votoNo">
           Voted <span class="badge bg-primary text-white">
@@ -31,7 +31,7 @@
           Didn't vote
         </span>
       </div>
-    </div>
+    </div> -->
   </li>
 
 </ul>

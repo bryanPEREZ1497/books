@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Socket } from 'ngx-socket-io';
 import { Usuario } from '../classes/usuario';
+import { WelcomeService } from './welcome.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,9 @@ export class WebsocketService {
 
   constructor(
     private socket: Socket,
-    private router: Router
+    private router: Router,
+    private welcomeService: WelcomeService
+
     ) {
     this.cargarStorage();
     this.checkStatus();
@@ -45,15 +48,18 @@ export class WebsocketService {
       this.emit('configurar-usuario', { nombre }, (resp: any) => {
         this.usuario = new Usuario(nombre);
         this.guardarStorage();
+        this.welcomeService.listenLogin();
         resolve();
       });
     });
+
 
   }
 
   logoutWS() {
     this.usuario = null;
     localStorage.removeItem('usuario');
+    this.welcomeService.listenLogout();
 
     const payload = {
       nombre: 'sin-nombre'

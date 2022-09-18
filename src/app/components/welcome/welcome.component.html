@@ -2,9 +2,10 @@
     <div class="row">
         <div class="col ">
             <nav class="d-grid gap-4">
-                <button class=" p-2 btn btn-outline-primary" routerLink="/votes"> Vote </button>
-                <button class=" p-2 btn btn-outline-primary" routerLink="/mensaje"> Chat</button>
-                <button class=" p-2 btn btn-outline-danger" (click)="salir()"> Go out</button>
+                <!-- <button class=" p-2 btn btn-outline-primary" routerLink="/votes"> Vote </button>
+                <button class=" p-2 btn btn-outline-primary" routerLink="/mensaje"> Chat</button> -->
+                <button *ngIf="welcomeService.enabled|async" class=" p-2 btn btn-outline-danger" 
+                (click)="salir()"> Go out</button>
             </nav>
 
         </div>
