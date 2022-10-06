@@ -7,7 +7,7 @@ import { WebsocketService } from 'src/app/services/websocket.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   nombre: string = '';
 
@@ -15,14 +15,13 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
-  }
-
   ingresar() {
-    this.wsService.loginWS(this.nombre)
-      .then(() => {
-        this.router.navigateByUrl('/mensaje');
-      });
+    if (this.nombre.trim() !== '') {
+      this.wsService.loginWS(this.nombre)
+        .then(() => {
+          this.router.navigateByUrl('/mensaje');
+        });
+    }
   }
 
 }
